@@ -9,7 +9,7 @@ COPY frontend/ /app
 COPY entrypoint.sh /api/entrypoint.sh
 
 WORKDIR /app
-RUN rm -r src/components/Stacks-Editor
+RUN rm -rf src/components/Stacks-Editor || true
 RUN git clone https://github.com/BaldissaraMatheus/Stacks-Editor src/components/Stacks-Editor
 RUN cd src/components/Stacks-Editor && npm ci --no-audit
 RUN set -eux && npm ci --no-audit --omit=dev
