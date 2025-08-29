@@ -26,7 +26,7 @@ RUN mkdir /stylesheets
 
 COPY --from=build-stage /app /app
 COPY --from=build-stage /api/ /api/
-
+COPY tasks/ /tasks/
 WORKDIR /api
 EXPOSE 8080
 
